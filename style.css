@@ -1,3 +1,94 @@
-.text {
-  color: green;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* ------------------------ */
+/* MAIN COL0R #087F5B */
+/* TEXT COLOR #343A40 */
+/* ------------------------ */
+body {
+  font-family: "poppins", sans-serif;
+  color: #343a40;
+  line-height: 1.2;
+}
+
+.accordion {
+  width: 700px;
+  margin: 100px auto; /* puting in a midle */
+  /* couse of gap, flex is always better solution */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+
+  /* I like to use grid and flex in combination */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 24px;
+  row-gap: 32px;
+}
+
+.hiden-box {
+  grid-column: 2; /* impotrant part of grid setup*/
+  display: none;
+}
+
+.number,
+.text {
+  font-size: 24px;
+  font-weight: 500;
+  /* color: #087f5b; */
+}
+
+.number {
+  color: #ced4da;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: #087f5b;
+}
+.hiden-box p {
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.hiden-box ul {
+  color: #868e96;
+  margin-left: 20px;
+  font-size: 0.9rem;
+  /* Flex better solution */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.open {
+  border-top: 4px solid #087f5b;
+}
+
+.open .hiden-box {
+  display: block;
+}
+
+.open .number {
+  color: #087f5b;
+}
+
+.open .text,
+.open .icon {
+  color: #087f5b;
+}
+
+/* these 2 classes works like IF statement. 
+'number' class is exist in all 3 accordions. 'open' class 
+there is just in the accordion nums 2. If both classes exist 
+at the same time in one accordion, color will be changed */
+
